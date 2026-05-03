@@ -417,8 +417,10 @@
     .client-center-header { text-align: center; margin-bottom: 48px; }
     .cc-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
+      max-width: 720px;
+      margin: 0 auto;
     }
     .cc-card {
       border: 1.5px solid rgba(110,133,118,0.25);
@@ -617,8 +619,6 @@
         <li><a href="#client-center" onclick="closeMobileNav()">Client Center</a></li>
         <li><a href="#request" onclick="closeMobileNav()">Request Cleaning</a></li>
       </ul>
-      <a href="tel:6627151804" class="btn btn-primary">Call / Text 662-715-1804</a>
-      <a href="https://wa.me/16627151804" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:12px;">WhatsApp Us</a>
     </nav>
   </header>
 
@@ -636,7 +636,7 @@
           </p>
           <div class="hero-ctas fade-up delay-3">
             <a href="#request" class="btn btn-gold">Request a Cleaning</a>
-            <a href="tel:6627151804" class="btn btn-outline" style="color:var(--cream);border-color:rgba(245,240,232,0.4);">Call or Text Us</a>
+
           </div>
         </div>
         <div class="hero-icon" aria-hidden="true">
@@ -832,16 +832,6 @@
         <p class="section-sub" style="margin:0 auto;">Everything you need to manage your service, communicate with us, or update your account.</p>
       </div>
       <div class="cc-grid">
-        <a href="sms:6627151804" class="cc-card fade-up">
-          <div class="cc-icon">💬</div>
-          <h3>Text Us</h3>
-          <p>Quickest way to reach us — for changes, questions, or add-ons.</p>
-        </a>
-        <a href="tel:6627151804" class="cc-card fade-up delay-1">
-          <div class="cc-icon">📞</div>
-          <h3>Call Us</h3>
-          <p>Talk directly to someone on the team. We pick up.</p>
-        </a>
         <a href="mailto:ladiesprimera901@gmail.com" class="cc-card fade-up delay-2">
           <div class="cc-icon">✉️</div>
           <h3>Email Us</h3>
@@ -879,14 +869,12 @@
               <div class="contact-icon">📱</div>
               <div>
                 <strong style="color:var(--cream);">Call or Text</strong>
-                <p><a href="tel:6627151804">662-715-1804</a></p>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-icon">💬</div>
               <div>
                 <strong style="color:var(--cream);">WhatsApp</strong>
-                <p><a href="https://wa.me/16627151804" target="_blank" rel="noopener">Message us on WhatsApp</a></p>
               </div>
             </div>
             <div class="contact-item">
@@ -928,7 +916,7 @@
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="phone">Phone / WhatsApp *</label>
+                <label for="phone">Phone *</label>
                 <input type="tel" id="phone" name="phone" required autocomplete="tel" />
               </div>
               <div class="form-group">
@@ -1041,9 +1029,7 @@
         <div class="footer-col">
           <h4>Contact</h4>
           <ul>
-            <li><a href="tel:6627151804">662-715-1804</a></li>
             <li><a href="mailto:ladiesprimera901@gmail.com">ladiesprimera901@gmail.com</a></li>
-            <li><a href="https://wa.me/16627151804" target="_blank" rel="noopener">WhatsApp</a></li>
           </ul>
         </div>
       </div>
@@ -1120,7 +1106,7 @@
             form.submit(); // native submit, will redirect to _next
           } else {
             if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Request'; }
-            alert('Sorry — something went wrong sending your request. Please text us at 662-715-1804 and we will get right back to you.');
+            alert('Sorry — something went wrong sending your request. Please email us at ladiesprimera901@gmail.com and we will get right back to you.');
           }
         }
       });
