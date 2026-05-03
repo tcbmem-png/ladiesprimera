@@ -889,118 +889,56 @@
 
         <div class="request-form fade-up delay-2">
           <form
-            id="intake-form"
-            action="https://ladiesprimera.replit.app/api/leads/intake"
-            method="POST"
-            data-fallback="https://formsubmit.co/ladiesprimera901@gmail.com"
-            data-redirect="https://ladiesprimera901.com/gracias"
-          >
-            <!-- App + fallback config -->
-            <input type="hidden" name="_redirect" value="https://ladiesprimera901.com/gracias" />
-            <input type="hidden" name="_subject" value="New Cleaning Request — Ladies Primera" />
-            <input type="hidden" name="_next" value="https://ladiesprimera901.com/gracias" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-            <!-- Honeypot: bots fill this, humans don't see it -->
-            <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" />
+              id="intake-form"
+              action="https://ladiesprimera.replit.app/api/leads/intake"
+              method="POST"
+              data-fallback="https://formsubmit.co/ladiesprimera901@gmail.com"
+              data-redirect="https://ladiesprimera901.com/gracias"
+            >
+              <!-- App + fallback config -->
+              <input type="hidden" name="_redirect" value="https://ladiesprimera901.com/gracias" />
+              <input type="hidden" name="_subject" value="New Cleaning Request — Ladies Primera" />
+              <input type="hidden" name="_next" value="https://ladiesprimera901.com/gracias" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <!-- Honeypot -->
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" />
 
-            <div class="form-row">
               <div class="form-group">
-                <label for="first_name">First Name *</label>
-                <input type="text" id="first_name" name="first_name" required autocomplete="given-name" />
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required autocomplete="name" placeholder="Jane Smith" />
               </div>
-              <div class="form-group">
-                <label for="last_name">Last Name *</label>
-                <input type="text" id="last_name" name="last_name" required autocomplete="family-name" />
-              </div>
-            </div>
-            <div class="form-row">
               <div class="form-group">
                 <label for="phone">Phone *</label>
-                <input type="tel" id="phone" name="phone" required autocomplete="tel" />
+                <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="901-555-0101" />
               </div>
               <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" autocomplete="email" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="service_type">Service Type *</label>
-              <select id="service_type" name="service_type" required onchange="toggleSTR(this)">
-                <option value="">— Select a service —</option>
-                <option value="Residential - Recurring">Residential — Recurring</option>
-                <option value="Residential - One-Time">Residential — One-Time</option>
-                <option value="Deep Clean">Deep Clean / Move-In / Move-Out</option>
-                <option value="Short-Term Rental / Airbnb">Short-Term Rental / Airbnb Turnover</option>
-                <option value="Commercial / Office">Commercial / Office</option>
-                <option value="Custom / Other">Custom / Other</option>
-              </select>
-            </div>
-
-            <!-- STR-specific fields -->
-            <div class="str-fields" id="str-fields">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="checkout_time">Guest Check-Out Time</label>
-                  <input type="time" id="checkout_time" name="checkout_time" />
-                </div>
-                <div class="form-group">
-                  <label for="checkin_time">Next Guest Check-In Time</label>
-                  <input type="time" id="checkin_time" name="checkin_time" />
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="laundry">Linen / Laundry Service?</label>
-                  <select id="laundry" name="laundry">
-                    <option value="No">No</option>
-                    <option value="Yes - Strip and restage">Yes — Strip &amp; restage</option>
-                    <option value="Yes - Full laundry">Yes — Full laundry</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="restocking">Restocking Supplies?</label>
-                  <select id="restocking" name="restocking">
-                    <option value="No">No</option>
-                    <option value="Yes - I supply them">Yes — I supply</option>
-                    <option value="Yes - Coordinate with me">Yes — Coordinate</option>
-                  </select>
-                </div>
+                <label for="property_address">Property Address *</label>
+                <input type="text" id="property_address" name="property_address" required autocomplete="street-address" placeholder="123 Main St, Memphis, TN 38104" />
               </div>
               <div class="form-group">
-                <label for="photo_confirm">Photo Confirmation Requested?</label>
-                <select id="photo_confirm" name="photo_confirm">
-                  <option value="Yes">Yes please</option>
-                  <option value="No">No need</option>
+                <label for="service_type">Service Type *</label>
+                <select id="service_type" name="service_type" required>
+                  <option value="">— Select a service —</option>
+                  <option value="Residential — Recurring">Residential — Recurring</option>
+                  <option value="Residential — One-Time">Residential — One-Time</option>
+                  <option value="Deep Clean / Move-In / Move-Out">Deep Clean / Move-In / Move-Out</option>
+                  <option value="Short-Term Rental / Airbnb Turnover">Short-Term Rental / Airbnb Turnover</option>
+                  <option value="Commercial / Office">Commercial / Office</option>
                 </select>
               </div>
-            </div>
-
-            <div class="form-group">
-              <label for="property_address">Property Address *</label>
-              <input type="text" id="property_address" name="property_address" required autocomplete="street-address" />
-            </div>
-            <div class="form-row">
               <div class="form-group">
-                <label for="preferred_date">Preferred Date</label>
-                <input type="date" id="preferred_date" name="preferred_date" />
-              </div>
-              <div class="form-group">
-                <label for="preferred_time">Preferred Time</label>
-                <select id="preferred_time" name="preferred_time">
-                  <option value="">Any time</option>
-                  <option value="Morning (8am–12pm)">Morning (8am–12pm)</option>
-                  <option value="Afternoon (12pm–4pm)">Afternoon (12pm–4pm)</option>
-                  <option value="Flexible">Flexible</option>
+                <label for="cleaning_frequency">How often do you need cleaning? *</label>
+                <select id="cleaning_frequency" name="cleaning_frequency" required>
+                  <option value="">— Select frequency —</option>
+                  <option value="Weekly">Weekly</option>
+                  <option value="Bi-Weekly (every 2 weeks)">Bi-Weekly (every 2 weeks)</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="One-Time">One-Time / Not sure yet</option>
                 </select>
               </div>
-            </div>
-            <div class="form-group">
-              <label for="notes">Notes / Special Instructions</label>
-              <textarea id="notes" name="notes" placeholder="Pets, access codes, special areas, custom checklist items…"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary form-submit">Submit Request</button>
-          </form>
+              <button type="submit" class="btn btn-primary form-submit">Send Request</button>
+            </form>
         </div>
       </div>
     </div>
@@ -1054,10 +992,6 @@
       document.getElementById('mobile-nav').classList.remove('open');
     }
 
-    // STR fields toggle
-    function toggleSTR(select) {
-      document.getElementById('str-fields').classList.toggle('show', select.value === 'Short-Term Rental / Airbnb');
-    }
 
     // Intersection observer for fade-up animations
     const observer = new IntersectionObserver((entries) => {
@@ -1106,7 +1040,7 @@
             form.submit(); // native submit, will redirect to _next
           } else {
             if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Request'; }
-            alert('Sorry — something went wrong sending your request. Please email us at ladiesprimera901@gmail.com and we will get right back to you.');
+            alert('Sorry — something went wrong. Please email us at ladiesprimera901@gmail.com and we will get right back to you.');
           }
         }
       });
