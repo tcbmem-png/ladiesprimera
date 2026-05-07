@@ -884,132 +884,17 @@
     </div>
   </section>
 
-  <!-- ══ REQUEST FORM ══ -->
-  <section id="request">
-    <div class="container">
-      <div class="request-inner">
-        <div class="request-intro fade-up">
-          <span class="section-label">Get Started</span>
-          <h2 class="section-title">Request a Cleaning</h2>
-          <p class="section-sub">Fill out the form and we'll follow up within a few hours to confirm details and availability.</p>
-          <div class="contact-details">
-            <div class="contact-item">
-              <div class="contact-icon">📱</div>
-              <div>
-                <strong style="color:var(--cream);">Call or Text</strong>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">💬</div>
-              <div>
-                <strong style="color:var(--cream);">WhatsApp</strong>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">✉️</div>
-              <div>
-                <strong style="color:var(--cream);">Email</strong>
-                <p><a href="mailto:ladiesprimera901@gmail.com">ladiesprimera901@gmail.com</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="request-form fade-up delay-2">
-          <form
-              id="intake-form"
-              action="https://ladiesprimera.replit.app/api/leads/intake"
-              method="POST"
-              data-redirect="https://ladiesprimera901.com/gracias"
-            >
-              <!-- App + fallback config -->
-              <input type="hidden" name="_redirect" value="https://ladiesprimera901.com/gracias" />
-              <input type="hidden" name="_subject" value="New Cleaning Request — Ladies Primera" />
-              <input type="hidden" name="_next" value="https://ladiesprimera901.com/gracias" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              <!-- Honeypot -->
-              <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" />
-
-              <div class="form-group">
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" required autocomplete="name" placeholder="Jane Smith" />
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone *</label>
-                <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="901-555-0101" />
-              </div>
-                <div class="form-group">
-                  <label for="email">Email *</label>
-                  <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com" />
-                </div>
-              <div class="form-group">
-                <label for="property_address">Property Address *</label>
-                <input type="text" id="property_address" name="property_address" required autocomplete="street-address" placeholder="123 Main St, Memphis, TN 38104" />
-              </div>
-              <div class="form-group">
-                <label for="service_type">Service Type *</label>
-                <select id="service_type" name="service_type" required>
-                  <option value="">— Select a service —</option>
-                  <option value="Residential — Recurring">Residential — Recurring</option>
-                  <option value="Residential — One-Time">Residential — One-Time</option>
-                  <option value="Deep Clean / Move-In / Move-Out">Deep Clean / Move-In / Move-Out</option>
-                  <option value="Short-Term Rental / Airbnb Turnover">Short-Term Rental / Airbnb Turnover</option>
-                  <option value="Commercial / Office">Commercial / Office</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="cleaning_frequency">How often do you need cleaning? *</label>
-                <select id="cleaning_frequency" name="cleaning_frequency" required>
-                <option value="">— Choose one —</option>
-                <option value="weekly">Weekly</option>
-                <option value="biweekly">Every 2 weeks</option>
-                <option value="monthly">Monthly</option>
-                <option value="quarterly">Every 3 months (deep clean)</option>
-                <option value="on_call">On-call / as needed (STR, one-off)</option>
-              </select>
-              </div>
-              <div class="form-group">
-                <label for="preferred_day">Preferred day of the week</label>
-                <select id="preferred_day" name="preferred_day">
-                  <option value="">— No preference —</option>
-                  <option value="mon">Monday</option>
-                  <option value="tue">Tuesday</option>
-                  <option value="wed">Wednesday</option>
-                  <option value="thu">Thursday</option>
-                  <option value="fri">Friday</option>
-                  <option value="sat">Saturday</option>
-                  <option value="sun">Sunday</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="day_flexibility">How flexible is that day?</label>
-                <select id="day_flexibility" name="day_flexibility">
-                  <option value="">— Choose one —</option>
-                  <option value="strict">Only that day works for me</option>
-                  <option value="secondary">I have a backup day too</option>
-                  <option value="flexible">Any weekday is fine</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="preferred_day_backup">Backup day (if your first choice isn't available)</label>
-                <select id="preferred_day_backup" name="preferred_day_backup">
-                  <option value="">— None —</option>
-                  <option value="mon">Monday</option>
-                  <option value="tue">Tuesday</option>
-                  <option value="wed">Wednesday</option>
-                  <option value="thu">Thursday</option>
-                  <option value="fri">Friday</option>
-                  <option value="sat">Saturday</option>
-                  <option value="sun">Sunday</option>
-                </select>
-              </div>
-              <button type="submit" class="btn btn-primary form-submit">Send Request</button>
-            </form>
+  <!-- ══ REQUEST QUOTE CTA ══ -->
+    <section id="request">
+      <div class="container">
+        <div class="request-cta" style="text-align:center; max-width:640px; margin:0 auto; padding:3rem 1.5rem;">
+          <h2 style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:clamp(2rem,4vw,2.75rem); margin:0 0 1rem;">Ready for a free quote?</h2>
+          <p style="color:#555; font-size:1.05rem; line-height:1.5; margin:0 0 2rem;">Tell us a little about your space and we'll get back to you within one business day. Takes about a minute.</p>
+          <a href="https://ladiesprimera.replit.app/intake" class="cta-button" style="display:inline-block; padding:1rem 2.5rem; background:#c89c5b; color:#fff; text-decoration:none; font-weight:600; font-size:1.05rem; letter-spacing:.02em; border-radius:8px;">Get my free quote →</a>
+          <p style="color:#888; font-size:.9rem; margin:1.5rem 0 0;">Prefer to talk? Call <a href="tel:6627151804" style="color:#c89c5b; font-weight:600;">662-715-1804</a> or text us anytime.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <!-- ══ FOOTER ══ -->
   <footer id="footer">
