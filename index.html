@@ -920,7 +920,6 @@
               id="intake-form"
               action="https://ladiesprimera.replit.app/api/leads/intake"
               method="POST"
-              data-fallback="https://formsubmit.co/ladiesprimera901@gmail.com"
               data-redirect="https://ladiesprimera901.com/gracias"
             >
               <!-- App + fallback config -->
@@ -1033,55 +1032,58 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // Intake form: try Replit app first, fall back to FormSubmit if unreachable.
-    // Without JS the form still works (native POST to action attribute).
-    (function () {
-      const form = document.getElementById('intake-form');
-      if (!form) return;
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const primaryUrl = form.getAttribute('action');
-      const fallbackUrl = form.getAttribute('data-fallback');
-      const redirectUrl = form.getAttribute('data-redirect') || '/gracias';
+    // Intake form: send as JSON to the API (avoids cross-origin redirect issues).
+      // Without JS the form still works (native POST to action attribute returns a 303).
+      (function () {
+        const form = document.getElementById('intake-form');
+        if (!form) return;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const primaryUrl = form.getAttribute('action');
+        const redirectUrl = form.getAttribute('data-redirect') || '/gracias';
+        const originalBtnText = submitBtn ? submitBtn.textContent : 'Send Request';
 
-      form.addEventListener('submit', async function (e) {
-        // Honeypot: silently succeed if filled by a bot
-        const honey = form.querySelector('input[name="_honey"]');
-        if (honey && honey.value) { e.preventDefault(); window.location.href = redirectUrl; return; }
+        form.addEventListener('submit', async function (e) {
+          // Honeypot: silently succeed if filled by a bot
+          const honey = form.querySelector('input[name="_honey"]');
+          if (honey && honey.value) { e.preventDefault(); window.location.href = redirectUrl; return; }
 
-        e.preventDefault();
-        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+          e.preventDefault();
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
 
-        const data = new FormData(form);
+          // Build a plain JSON payload from real form fields (skip _-prefixed metadata)
+          const fd = new FormData(form);
+          const payload = {};
+          for (const [k, v] of fd.entries()) {
+            if (k.startsWith('_')) continue;
+            payload[k] = typeof v === 'string' ? v : '';
+          }
 
-        // Try the Replit app first.
-          // Use redirect:'manual' because the API returns a 303 to a different origin,
-          // which the browser refuses to auto-follow inside a CORS fetch.
           try {
             const res = await fetch(primaryUrl, {
               method: 'POST',
-              body: data,
-              redirect: 'manual',
-              mode: 'cors'
+              mode: 'cors',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify(payload),
             });
-            // opaqueredirect = success (server sent 3xx); status 200-399 = success.
-            if (res.type === 'opaqueredirect' || res.ok || (res.status >= 200 && res.status < 400)) {
+            if (res.ok) {
               window.location.href = redirectUrl;
               return;
             }
-            throw new Error('Primary endpoint returned ' + res.status);
+            // Try to surface validation errors from the API
+            let msg = 'Sorry — something went wrong. Please email us at ladiesprimera901@gmail.com or call 662-715-1804.';
+            try {
+              const data = await res.json();
+              if (data && data.error) msg = data.error;
+            } catch (_) {}
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalBtnText; }
+            alert(msg);
           } catch (err) {
-          // Fall back to FormSubmit so the lead still lands somewhere
-          console.warn('Primary intake failed, falling back:', err);
-          if (fallbackUrl) {
-            form.action = fallbackUrl;
-            form.submit(); // native submit, will redirect to _next
-          } else {
-            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Request'; }
-            alert('Sorry — something went wrong. Please email us at ladiesprimera901@gmail.com and we will get right back to you.');
+            console.warn('Intake submit failed:', err);
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalBtnText; }
+            alert('Sorry — we could not reach our server. Please email us at ladiesprimera901@gmail.com or call 662-715-1804.');
           }
-        }
-      });
-    })();
+        });
+      })();
   </script>
 </body>
 </html>
