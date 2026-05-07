@@ -968,6 +968,41 @@
                   <option value="One-Time">One-Time / Not sure yet</option>
                 </select>
               </div>
+              <div class="form-group">
+                <label for="preferred_day">Preferred day of the week</label>
+                <select id="preferred_day" name="preferred_day">
+                  <option value="">— No preference —</option>
+                  <option value="mon">Monday</option>
+                  <option value="tue">Tuesday</option>
+                  <option value="wed">Wednesday</option>
+                  <option value="thu">Thursday</option>
+                  <option value="fri">Friday</option>
+                  <option value="sat">Saturday</option>
+                  <option value="sun">Sunday</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="day_flexibility">How flexible is that day?</label>
+                <select id="day_flexibility" name="day_flexibility">
+                  <option value="">— Choose one —</option>
+                  <option value="strict">Only that day works for me</option>
+                  <option value="secondary">I have a backup day too</option>
+                  <option value="flexible">Any weekday is fine</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="preferred_day_backup">Backup day (if your first choice isn't available)</label>
+                <select id="preferred_day_backup" name="preferred_day_backup">
+                  <option value="">— None —</option>
+                  <option value="mon">Monday</option>
+                  <option value="tue">Tuesday</option>
+                  <option value="wed">Wednesday</option>
+                  <option value="thu">Thursday</option>
+                  <option value="fri">Friday</option>
+                  <option value="sat">Saturday</option>
+                  <option value="sun">Sunday</option>
+                </select>
+              </div>
               <button type="submit" class="btn btn-primary form-submit">Send Request</button>
             </form>
         </div>
