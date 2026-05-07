@@ -1053,20 +1053,23 @@
 
         const data = new FormData(form);
 
-        // Try the Replit app first
-        try {
-          const res = await fetch(primaryUrl, {
-            method: 'POST',
-            body: data,
-            redirect: 'follow',
-            mode: 'cors'
-          });
-          if (res.ok || res.redirected) {
-            window.location.href = redirectUrl;
-            return;
-          }
-          throw new Error('Primary endpoint returned ' + res.status);
-        } catch (err) {
+        // Try the Replit app first.
+          // Use redirect:'manual' because the API returns a 303 to a different origin,
+          // which the browser refuses to auto-follow inside a CORS fetch.
+          try {
+            const res = await fetch(primaryUrl, {
+              method: 'POST',
+              body: data,
+              redirect: 'manual',
+              mode: 'cors'
+            });
+            // opaqueredirect = success (server sent 3xx); status 200-399 = success.
+            if (res.type === 'opaqueredirect' || res.ok || (res.status >= 200 && res.status < 400)) {
+              window.location.href = redirectUrl;
+              return;
+            }
+            throw new Error('Primary endpoint returned ' + res.status);
+          } catch (err) {
           // Fall back to FormSubmit so the lead still lands somewhere
           console.warn('Primary intake failed, falling back:', err);
           if (fallbackUrl) {
