@@ -1,6 +1,9 @@
 {
   "rewrites": [
-    { "source": "/gracias", "destination": "/gracias/index.html" }
+    { "source": "/gracias", "destination": "/gracias/index.html" },
+    { "source": "/welcome-anel", "destination": "/welcome-anel/index.html" },
+    { "source": "/welcome-ladies", "destination": "/welcome-ladies/index.html" },
+    { "source": "/welcome-customers", "destination": "/welcome-customers/index.html" }
   ],
   "headers": [
     {

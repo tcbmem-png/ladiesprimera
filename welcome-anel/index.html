@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bienvenida, Anel — Centro de Ladies Primera Cleaning</title>
+  <meta name="description" content="Tu centro para organizar clientes, ladies, trabajos, horarios y comunicación de Ladies Primera Cleaning." />
+  <meta name="robots" content="noindex" />
+
+  <link rel="icon" type="image/svg+xml" href="/svg/ladies-primera-favicon-32.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/png/ladies-primera-favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/png/ladies-primera-favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/png/ladies-primera-favicon-512.png" />
+
+  <meta property="og:title" content="Bienvenida, Anel — Ladies Primera Cleaning" />
+  <meta property="og:description" content="Tu centro de operaciones y enlaces para Ladies Primera Cleaning." />
+  <meta property="og:image" content="https://ladiesprimera901.com/png/ladies-primera-social-light.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ladiesprimera.com/welcome-anel" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream:      #F5F1EA;
+      --cream-dark: #EDE5D8;
+      --green:      #6F8576;
+      --green-dark: #4A5E52;
+      --gold:       #C8A46B;
+      --gold-dark:  #b89258;
+      --terra:      #C77B5A;
+      --charcoal:   #2E2E2E;
+      --text:       #3A3530;
+      --serif:      'Playfair Display', Georgia, serif;
+      --sans:       'Montserrat', Helvetica, Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); font-weight: 400; font-size: 17px; line-height: 1.65; color: var(--text); background: var(--cream); }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+    .top-bar { padding: 22px 0; background: var(--cream); border-bottom: 1px solid rgba(46,46,46,0.06); }
+    .top-bar-inner { display: flex; align-items: center; justify-content: space-between; }
+    .top-logo img { height: 38px; width: auto; }
+    .top-back { font-family: var(--sans); font-weight: 500; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s ease; }
+    .top-back:hover { border-bottom-color: var(--green); }
+
+    #hero { padding: 72px 0 56px; background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%); text-align: center; }
+    .eyebrow { display: inline-block; font-family: var(--sans); font-weight: 500; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(34px, 5.5vw, 52px); color: var(--charcoal); line-height: 1.15; margin-bottom: 18px; }
+    h1 em { font-style: italic; color: var(--green); }
+    .hero-sub { font-size: 19px; color: #5A5550; max-width: 620px; margin: 0 auto; line-height: 1.6; }
+
+    section.body { padding: 56px 0; }
+    section.body + section.body { padding-top: 0; }
+    .section-label { display: block; font-family: var(--sans); font-weight: 500; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(26px, 4vw, 36px); color: var(--charcoal); line-height: 1.25; margin-bottom: 18px; }
+    h2 em { font-style: italic; color: var(--green); }
+    p { margin-bottom: 16px; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+
+    /* Link card (which-link-to-send) */
+    .link-card {
+      background: white;
+      border: 1px solid rgba(46,46,46,0.1);
+      border-radius: 6px;
+      padding: 24px 26px;
+      margin: 18px 0;
+      box-shadow: 0 1px 3px rgba(46,46,46,0.04);
+    }
+    .link-card.customers { border-left: 4px solid var(--gold); }
+    .link-card.ladies { border-left: 4px solid var(--green); }
+    .link-card h3 { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 22px; color: var(--charcoal); margin-bottom: 6px; }
+    .link-card .who { font-family: var(--sans); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .link-card .url {
+      display: block;
+      background: var(--cream-dark);
+      padding: 12px 14px;
+      border-radius: 3px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      color: var(--green-dark);
+      margin: 14px 0 12px;
+      word-break: break-all;
+      border: 1px dashed rgba(74,94,82,0.3);
+    }
+    .link-card p { color: #5A5550; font-size: 15px; }
+
+    /* Checklist */
+    .checklist {
+      background: white;
+      border-radius: 6px;
+      padding: 24px 26px;
+      border: 1px solid rgba(46,46,46,0.08);
+    }
+    .checklist ul { list-style: none; padding: 0; margin: 0; }
+    .checklist li {
+      padding: 10px 0 10px 32px;
+      position: relative;
+      border-bottom: 1px solid rgba(46,46,46,0.06);
+      font-size: 15.5px;
+      color: var(--text);
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid var(--green);
+      border-radius: 3px;
+      background: var(--cream);
+    }
+
+    /* Buttons grid */
+    .btn-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 3px;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      text-decoration: none;
+      text-align: center;
+    }
+    .btn-gold { background: var(--gold); color: var(--charcoal); }
+    .btn-gold:hover { background: var(--gold-dark); }
+    .btn-green { background: var(--green); color: var(--cream); }
+    .btn-green:hover { background: var(--green-dark); }
+    .btn-outline-green { background: transparent; color: var(--green); border: 1.5px solid var(--green); }
+    .btn-outline-green:hover { background: var(--green); color: var(--cream); }
+    .btn-outline-charcoal { background: transparent; color: var(--charcoal); border: 1.5px solid var(--charcoal); }
+    .btn-outline-charcoal:hover { background: var(--charcoal); color: var(--cream); }
+
+    footer { padding: 32px 0 40px; background: var(--charcoal); color: rgba(245,241,234,0.7); text-align: center; font-size: 13.5px; }
+    footer a { color: var(--cream); text-decoration: none; border-bottom: 1px solid rgba(245,241,234,0.3); }
+    footer a:hover { border-bottom-color: var(--cream); }
+    .footer-tag { font-style: italic; color: rgba(245,241,234,0.55); margin-top: 6px; font-size: 12.5px; }
+
+    @media (max-width: 600px) {
+      .btn-grid { grid-template-columns: 1fr; }
+      #hero { padding: 56px 0 44px; }
+      section.body { padding: 44px 0; }
+      .top-back { font-size: 11px; letter-spacing: 0.1em; }
+      .link-card .url { font-size: 12.5px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="container">
+      <div class="top-bar-inner">
+        <a href="/" class="top-logo" aria-label="Ladies Primera Cleaning — Inicio">
+          <img src="/svg/ladies-primera-logo-horizontal.svg" alt="Ladies Primera Cleaning" />
+        </a>
+        <a href="/" class="top-back">← Sitio Principal</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="container">
+      <span class="eyebrow">Tu Centro</span>
+      <h1>Bienvenida, <em>Anel</em></h1>
+      <p class="hero-sub">Este es tu centro para organizar clientes, ladies, trabajos, horarios y comunicación de Ladies Primera Cleaning.</p>
+    </div>
+  </section>
+
+  <section class="body">
+    <div class="container">
+      <span class="section-label">El Sistema</span>
+      <h2>Qué estamos <em>organizando</em></h2>
+      <p><strong>Ladies Primera Cleaning</strong> es el nombre y el sistema organizado detrás del negocio: clientes, trabajadoras, detalles de cada trabajo, horarios, comunicación, y seguimiento. Una sola casa para todo, en lugar de tenerlo regado entre mensajes, notas y la memoria.</p>
+    </div>
+  </section>
+
+  <section class="body">
+    <div class="container">
+      <span class="section-label">Enlaces Para Compartir</span>
+      <h2>Qué enlace mandar a <em>quién</em></h2>
+
+      <div class="link-card customers">
+        <div class="who">Para Clientes</div>
+        <h3>Mándalo a tus clientes</h3>
+        <span class="url">https://ladiesprimera.com/welcome-customers</span>
+        <p>Esta página explica el nuevo nombre <strong>Ladies Primera Cleaning</strong> y por qué los clientes necesitan actualizar su información antes de llenar el formulario. Está en inglés (la mayoría de los clientes lo prefieren), con tono cálido y profesional.</p>
+      </div>
+
+      <div class="link-card ladies">
+        <div class="who">Para Las Ladies</div>
+        <h3>Mándalo a las trabajadoras</h3>
+        <span class="url">https://ladiesprimera.com/welcome-ladies</span>
+        <p>Esta página está en español. Explica el nuevo nombre, por qué las ladies necesitan llenar su información, y cómo el sistema ayuda al equipo. Después las dirige al formulario de intake.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="body">
+    <div class="container">
+      <span class="section-label">Rutina Diaria</span>
+      <h2>Qué revisar <em>cada día</em></h2>
+      <div class="checklist">
+        <ul>
+          <li>Nuevas solicitudes de clientes</li>
+          <li>Nuevas respuestas de ladies / trabajadoras</li>
+          <li>Trabajos programados para hoy y mañana</li>
+          <li>Trabajos que necesitan confirmación</li>
+          <li>Notas de acceso o instrucciones especiales</li>
+          <li>Seguimiento con clientes (mensajes, fotos de checklist)</li>
+          <li>Pagos o pendientes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="body">
+    <div class="container">
+      <span class="section-label">Enlaces Importantes</span>
+      <h2>Tus enlaces <em>principales</em></h2>
+      <div class="btn-grid">
+        <a href="https://ladiesprimera.com/welcome-customers" class="btn btn-gold">Página para clientes</a>
+        <a href="https://ladiesprimera.com/welcome-ladies" class="btn btn-green">Página para ladies</a>
+        <a href="https://ladiesprimera.replit.app/intake" class="btn btn-outline-green">Formulario para clientes</a>
+        <a href="https://ladiesprimera.replit.app/trabajos/intake?op=anel" class="btn btn-outline-green">Formulario para ladies</a>
+        <a href="https://ladiesprimera.replit.app" class="btn btn-outline-charcoal">Abrir panel</a>
+        <a href="/" class="btn btn-outline-charcoal">Ver sitio principal</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Ladies Primera Cleaning · Centro de operaciones</p>
+      <p><a href="/">← Volver al sitio principal</a></p>
+      <p class="footer-tag">Trusted cleaning ladies. Professionally planned.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Ladies Primera Cleaning — A Note from Anel</title>
+  <meta name="description" content="A short note from Anel for current and new customers about the Ladies Primera Cleaning name and how to update your information." />
+  <meta name="robots" content="noindex" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/svg/ladies-primera-favicon-32.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/png/ladies-primera-favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/png/ladies-primera-favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/png/ladies-primera-favicon-512.png" />
+
+  <!-- Open Graph (rendered when Anel shares the link) -->
+  <meta property="og:title" content="Welcome to Ladies Primera Cleaning" />
+  <meta property="og:description" content="A short note from Anel about the new Ladies Primera Cleaning name and how to update your customer information." />
+  <meta property="og:image" content="https://ladiesprimera901.com/png/ladies-primera-social-light.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ladiesprimera.com/welcome-customers" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://ladiesprimera901.com/png/ladies-primera-social-light.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream:      #F5F1EA;
+      --cream-dark: #EDE5D8;
+      --green:      #6F8576;
+      --green-dark: #4A5E52;
+      --gold:       #C8A46B;
+      --gold-dark:  #b89258;
+      --terra:      #C77B5A;
+      --charcoal:   #2E2E2E;
+      --text:       #3A3530;
+      --serif:      'Playfair Display', Georgia, serif;
+      --sans:       'Montserrat', Helvetica, Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--cream);
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    .top-bar {
+      padding: 22px 0;
+      background: var(--cream);
+      border-bottom: 1px solid rgba(46,46,46,0.06);
+    }
+    .top-bar-inner { display: flex; align-items: center; justify-content: space-between; }
+    .top-logo img { height: 38px; width: auto; }
+    .top-back {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+    .top-back:hover { border-bottom-color: var(--green); }
+
+    /* Hero */
+    #hero {
+      padding: 72px 0 56px;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+      text-align: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(34px, 5.5vw, 52px);
+      color: var(--charcoal);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    h1 em { font-style: italic; color: var(--green); }
+    .hero-sub {
+      font-size: 19px;
+      color: #5A5550;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Body sections */
+    section.body { padding: 56px 0; }
+    section.body + section.body { padding-top: 0; }
+    .section-label {
+      display: block;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(26px, 4vw, 36px);
+      color: var(--charcoal);
+      line-height: 1.25;
+      margin-bottom: 18px;
+    }
+    h2 em { font-style: italic; color: var(--green); }
+    p { margin-bottom: 16px; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+    .lead { font-size: 18px; color: #4A4540; }
+
+    .pull-card {
+      background: white;
+      border-left: 4px solid var(--gold);
+      padding: 24px 28px;
+      margin: 24px 0;
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(46,46,46,0.04);
+    }
+    .pull-card p { margin-bottom: 0; font-style: italic; color: #4A4540; }
+
+    /* Card grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .card {
+      background: white;
+      border: 1px solid rgba(46,46,46,0.08);
+      border-radius: 4px;
+      padding: 22px 22px;
+    }
+    .card h3 {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+      letter-spacing: 0.01em;
+    }
+    .card p {
+      font-size: 14.5px;
+      color: #5A5550;
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+
+    /* CTA section */
+    #cta {
+      padding: 64px 0 80px;
+      background: var(--green-dark);
+      color: var(--cream);
+      text-align: center;
+    }
+    #cta h2 { color: var(--cream); }
+    #cta p { color: rgba(245,241,234,0.85); margin-bottom: 28px; }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 3px;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      text-decoration: none;
+      margin: 6px 4px;
+    }
+    .btn-gold { background: var(--gold); color: var(--charcoal); }
+    .btn-gold:hover { background: var(--gold-dark); }
+    .btn-outline-cream { background: transparent; color: var(--cream); border: 1.5px solid var(--cream); }
+    .btn-outline-cream:hover { background: var(--cream); color: var(--green-dark); }
+    .btn-outline-green {
+      background: transparent;
+      color: var(--green);
+      border: 1.5px solid var(--green);
+    }
+    .btn-outline-green:hover { background: var(--green); color: var(--cream); }
+
+    /* Footer */
+    footer {
+      padding: 32px 0 40px;
+      background: var(--charcoal);
+      color: rgba(245,241,234,0.7);
+      text-align: center;
+      font-size: 13.5px;
+    }
+    footer a { color: var(--cream); text-decoration: none; border-bottom: 1px solid rgba(245,241,234,0.3); }
+    footer a:hover { border-bottom-color: var(--cream); }
+    .footer-tag { font-style: italic; color: rgba(245,241,234,0.55); margin-top: 6px; font-size: 12.5px; }
+
+    @media (max-width: 600px) {
+      .card-grid { grid-template-columns: 1fr; }
+      #hero { padding: 56px 0 44px; }
+      section.body { padding: 44px 0; }
+      .top-back { font-size: 11px; letter-spacing: 0.1em; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="container">
+      <div class="top-bar-inner">
+        <a href="/" class="top-logo" aria-label="Ladies Primera Cleaning — Home">
+          <img src="/svg/ladies-primera-logo-horizontal.svg" alt="Ladies Primera Cleaning" />
+        </a>
+        <a href="/" class="top-back">← Main Site</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="container">
+      <span class="eyebrow">A Note From Anel</span>
+      <h1>Welcome to Ladies Primera <em>Cleaning</em></h1>
+      <p class="hero-sub">Anel is getting more organized so scheduling, communication, and cleaning details are easier for everyone.</p>
+    </div>
+  </section>
+
+  <section class="body">
+    <div class="container">
+      <p class="lead">If you are receiving this from Anel, you are in the right place.</p>
+      <p><strong>Ladies Primera Cleaning</strong> is the new name and organized home for the cleaning work Anel and her team are already known for. Same Anel. Same trusted ladies. Same care.</p>
+
+      <div class="pull-card">
+        <p>Same Anel. Same ladies. Better system behind the scenes.</p>
+      </div>
+
+      <p>Anel built this business through trust, hard work, personal relationships, and quality cleaning — and it has grown beyond what one inbox and a notebook can hold. Up to now, a lot of customer details have lived in text messages, phone calls, WhatsApp threads, and calendar notes. That worked while the business was smaller. As more homes, offices, and short-term rentals come on, it is time to put everything into one clearer place.</p>
+    </div>
+  </section>
+
+  <section class="body">
+    <div class="container">
+      <span class="section-label">Why We're Asking</span>
+      <h2>Why we're asking for your <em>information</em></h2>
+      <p>Your address, phone number, gate codes, parking notes, pet details, cleaning preferences, and scheduling preferences are the things that make a clean go smoothly. Right now those details may be spread across old texts. We want them accurate and in one place — so the right team shows up with the right information, every time.</p>
+      <p>The personal service is not going away. This simply gives Anel a better system behind the scenes.</p>
+    </div>
+  </section>
+
+  <section class="body">
+    <div class="container">
+      <span class="section-label">What This Helps With</span>
+      <h2>What changes for <em>you</em></h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>Clearer scheduling</h3>
+          <p>Know when your team is coming and what's on the plan.</p>
+        </div>
+        <div class="card">
+          <h3>Better communication</h3>
+          <p>One organized place for messages, confirmations, and follow-up.</p>
+        </div>
+        <div class="card">
+          <h3>Correct addresses & access notes</h3>
+          <p>Gate codes, lockboxes, parking — captured once, used every visit.</p>
+        </div>
+        <div class="card">
+          <h3>Cleaning preferences in one place</h3>
+          <p>Products, areas to focus, areas to skip, pets — all on file.</p>
+        </div>
+        <div class="card">
+          <h3>Easier follow-up</h3>
+          <p>Issues, questions, and requests don't get lost in a text thread.</p>
+        </div>
+        <div class="card">
+          <h3>Room to grow with you</h3>
+          <p>Extra rooms, new properties, schedule changes — easy to update.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="container">
+      <span class="eyebrow" style="color: var(--gold);">What To Do Next</span>
+      <h2>Take 2 minutes — share your <em>details</em></h2>
+      <p>Update your customer information so we have your current address, contact info, access notes, and cleaning preferences in one place.</p>
+      <div>
+        <a href="https://ladiesprimera.replit.app/intake" class="btn btn-gold">Update My Customer Information</a>
+        <a href="https://ladiesprimera.replit.app/intake" class="btn btn-outline-cream">Request Cleaning Service</a>
+      </div>
+      <p style="margin-top: 28px; font-size: 14.5px;">
+        Prefer to talk? Call or text Anel at <a href="tel:6627151804" style="color: var(--cream); border-bottom: 1px solid rgba(245,241,234,0.4);">662-715-1804</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Ladies Primera Cleaning · Memphis · Oxford · Surrounding areas by request</p>
+      <p><a href="/">← Back to ladiesprimera.com</a></p>
+      <p class="footer-tag">Trusted cleaning ladies. Professionally planned.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
